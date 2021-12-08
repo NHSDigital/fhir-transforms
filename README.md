@@ -57,7 +57,7 @@ where
 is the resource to transform, and the source parameter in the URL
 
 ```shell
-http://basic.example/resource
+http://basic.test/medication-request
 ```
 
 need to match the name of the map in the FML, e.g.
