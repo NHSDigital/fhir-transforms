@@ -67,7 +67,7 @@ map "http://basic.test/medication-request" = "basic-test-medication-request"
 ...
 ```
 
-See [here](http://www.hl7.org/fhir/mapping-language.html#metadata) for definiton of the FML line above
+See [here](http://www.hl7.org/fhir/mapping-language.html#metadata) for the definition of the FML line above
 
 ## CLI implementations
 
@@ -90,7 +90,7 @@ MedicationRequest.extension.url
 MedicationRequest.extension.valueCodeableConcept.coding.system
 ```
 
-where the `./source.json` is (a contrieved, incomplete MedicationRequest resource with an extension), i.e.
+where the `./source.json` is (a contrived, incomplete MedicationRequest resource with an extension), i.e.
 
 ```json
 {
@@ -112,7 +112,7 @@ where the `./source.json` is (a contrieved, incomplete MedicationRequest resourc
 }
 ```
 
-and `./fmp.map` contains is the FHIR Mapping Language for the conversion.  The updated values are hardcoded string literal, i.e. `UPDATED DEFINITION HERE` and `UPDATED CODESYSTEM HERE`
+and `./fmp.map` contains the FHIR Mapping Language for the conversion.  The updated values are hardcoded string literals, i.e. `UPDATED DEFINITION HERE` and `UPDATED CODESYSTEM HERE`
 
 ```
 map "http://basic.test/medication-request" = "basic-test-medication-request"
@@ -142,7 +142,7 @@ group Coding(source src : Coding, target tgt : Coding) <<type+>> {
 }
 ```
 
-the output procduced, i.e. `output.json` should be
+the output produced, i.e. `output.json` should be
 
 ```json
 {
