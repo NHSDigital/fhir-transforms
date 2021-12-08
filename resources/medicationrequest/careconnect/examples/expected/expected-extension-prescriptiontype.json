@@ -1,0 +1,17 @@
+{
+  "resourceType": "MedicationRequest",
+  "extension": [
+    {
+      "url": "UPDATED DEFINITION HERE",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "UPDATED CODESYSTEM HERE",
+            "code": "acute",
+            "display": "Acute"
+          }
+        ]
+      }
+    }
+  ]
+}
