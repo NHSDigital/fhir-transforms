@@ -26,16 +26,16 @@ Has a working StructureMap/$convert and StructureMap/$transform operations
 
 #### a. Load the StructureMap into the server
 
-To load the StructureMap into the server using cURL
+To convert the FML to a StructureMap that can be posted to the server using cURL
 
 ```shell
-curl -X POST -H "Accept: application/fhir+json;fhirVersion=4.0" -H "Content-Type: text/fhir-mapping" --data-binary "@./extension.map" http://localhost:8080/matchbox/fhir/StructureMap/$convert
+curl -X POST -H "Accept: application/fhir+json;fhirVersion=4.0" -H "Content-Type: text/fhir-mapping" --data-binary "@./tutorial/maps/fml.map" http://localhost:8080/matchbox/fhir/StructureMap/$convert
 ```
 
 where
 
 ```shell
-"@./extension.map"
+"@./tutorial/maps/fml.map" 
 ```
 
 is the FML
@@ -45,13 +45,13 @@ is the FML
 To perform the transform using cURL
 
 ```shell
-curl -X POST -H "Accept: application/fhir+json;fhirVersion=4.0" -H "Content-Type: application/fhir+json;fhirVersion=4.0" --data-binary "@./source.json" http://localhost:8080/matchbox/fhir/StructureMap/$transform?source=http://basic.example/resource
+curl -X POST -H "Accept: application/fhir+json;fhirVersion=4.0" -H "Content-Type: application/fhir+json;fhirVersion=4.0" --data-binary "@./tutorial/data/input/source.json" http://localhost:8080/matchbox/fhir/StructureMap/\$transform?source=http://basic.test/medication-request
 ```
 
 where
 
 ```shell
-@./source.json
+"@./tutorial/data/input/source.json" 
 ```
 
 is the resource to transform, and the source parameter in the URL
@@ -60,7 +60,7 @@ is the resource to transform, and the source parameter in the URL
 http://basic.test/medication-request
 ```
 
-need to match the name of the map in the FML, e.g.
+needs to match the name of the map in the FML to indicate which transform to run, e.g.
 
 ```
 map "http://basic.test/medication-request" = "basic-test-medication-request"
@@ -80,7 +80,7 @@ Download the latest pre-built [validator_cli](https://github.com/hapifhir/org.hl
 The following usage of the validator_cli 
 
 ```shell
-java -jar validator_cli.jar ./source.json -transform http://basic.test/medication-request -version 4.0.1 -ig ./fml.map -output output.json
+java -jar validator_cli.jar ./tutorial/data/input/source.json -transform http://basic.test/medication-request -version 4.0.1 -ig ./tutorial/maps/fml.map -output /tmp/output.json
 ```
 
 will update the values of
@@ -90,7 +90,7 @@ MedicationRequest.extension.url
 MedicationRequest.extension.valueCodeableConcept.coding.system
 ```
 
-where the `./source.json` is (a contrived, incomplete MedicationRequest resource with an extension), i.e.
+where the `./tutorial/data/input/source.json` (a contrived, incomplete MedicationRequest resource with an extension) is,
 
 ```json
 {
@@ -112,7 +112,7 @@ where the `./source.json` is (a contrived, incomplete MedicationRequest resource
 }
 ```
 
-and `./fmp.map` contains the FHIR Mapping Language for the conversion.  The updated values are hardcoded string literals, i.e. `UPDATED DEFINITION HERE` and `UPDATED CODESYSTEM HERE`
+and `./tutorial/maps/fml.map` contains the FHIR Mapping Language for the conversion.  The updated values are hardcoded string literals, i.e. `UPDATED DEFINITION HERE` and `UPDATED CODESYSTEM HERE`
 
 ```
 map "http://basic.test/medication-request" = "basic-test-medication-request"
@@ -142,7 +142,7 @@ group Coding(source src : Coding, target tgt : Coding) <<type+>> {
 }
 ```
 
-the output produced, i.e. `output.json` should be
+the output produced, i.e. `/tmp/output.json` should be
 
 ```json
 {
