@@ -24,4 +24,4 @@ jobs:
       - run: java -jar validator_cli.jar resources/medicationrequest/careconnect-to-ukcore/data/input-MedicationRepeatInformation-001.json -transform http://basic.test/medication-request -version 4.0.1 -ig resources/medicationrequest/careconnect-to-ukcore/maps/fml-MedicationRepeatInformation.map -output /tmp/test.json
 
       - name: Display transform
-      - run: cat /tmp/test.json
+        run: cat /tmp/test.json
