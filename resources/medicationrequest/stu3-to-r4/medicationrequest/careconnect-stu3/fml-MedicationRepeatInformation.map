@@ -6,7 +6,7 @@ uses "http://hl7.org/fhir/StructureDefinition/Extension" alias Extension as targ
 
 group MedicationRequest(source src : MedicationRequest, target tgt : MedicationRequest)  {
     src.extension as ext where $this.url='https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationRepeatInformation-1'
-        -> tgt.extension as tgtext, tgtext.url='https://fhir.nhs.uk/StructureDefinition/Extension-CareConnect-MedicationRepeatInformation-1' then {
+        -> tgt.extension as tgtext, tgtext.url='https://fhir.nhs.uk/StructureDefinition/Extension-UKCore-MedicationRepeatInformation' then {
         ext.extension as vs where $this.url='numberOfRepeatPrescriptionsIssued' 
            -> tgtext.extension = create('Extension') as vt, vt.url = 'numberOfRepeatPrescriptionsIssued' then ExtensionUnsignedIntValue(vs, vt); 
         ext.extension as vs where $this.url='authorisationExpiryDate' -> tgtext.extension = create('Extension') as vt, vt.url = 'authorisationExpiryDate' then ExtensionDateTimeValue(vs, vt); 
