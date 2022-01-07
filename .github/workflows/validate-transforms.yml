@@ -23,3 +23,8 @@ jobs:
 
       - name: Display transform
         run: cat /tmp/test.json
+
+      - name: Diff output and expected
+        uses: sergeysova/jq-action@v2
+        with:
+          cmd: diff --color <(jq -S < /tmp/test.json) <(jq -S < resources/medicationrequest/careconnect-to-ukcore/data/expected-MedicationRepeatInformation-001.json

@@ -169,3 +169,4 @@ the output produced, i.e. `/tmp/output.json` should be
 * Update README with a more complete example.
 * Describe how to use the validator_cli to convert between based conversions without explicitly providing an FML map.
 * Add more examples...
+* Update CI to iterate over all maps/inputs to compare transforms with expected.
