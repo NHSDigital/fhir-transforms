@@ -12,9 +12,8 @@ group MedicationRequest(source src : MedicationRequest, target tgt : MedicationR
         ext.extension as vs where $this.url='authorisationExpiryDate' -> tgtext.extension = create('Extension') as vt, vt.url = 'authorisationExpiryDate' then ExtensionDateTimeValue(vs, vt); 
      };
     src.extension as ext where $this.url='https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationRepeatInformation-1'
-        -> tgt.extension as tgtext, tgtext.url='https://fhir.nhs.uk/StructureDefinition/Extension-UKCore-MedicationRepeatInformation' then {
-        ext.extension as vs where $this.url='numberOfRepeatPrescriptionsAllowed' 
-           -> tgt.dispenseRequest as vt then DispenseRequest(vs, vt); 
+        -> tgt.extension as tgtext then {
+        ext.extension as vs where $this.url='numberOfRepeatPrescriptionsAllowed' -> tgt.dispenseRequest as vt then DispenseRequest(vs, vt); 
      };
 }
 
