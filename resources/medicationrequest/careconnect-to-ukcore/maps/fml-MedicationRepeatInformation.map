@@ -11,6 +11,11 @@ group MedicationRequest(source src : MedicationRequest, target tgt : MedicationR
            -> tgtext.extension = create('Extension') as vt, vt.url = 'numberOfRepeatPrescriptionsIssued' then ExtensionUnsignedIntValue(vs, vt); 
         ext.extension as vs where $this.url='authorisationExpiryDate' -> tgtext.extension = create('Extension') as vt, vt.url = 'authorisationExpiryDate' then ExtensionDateTimeValue(vs, vt); 
      };
+    src.extension as ext where $this.url='https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationRepeatInformation-1'
+        -> tgt.extension as tgtext, tgtext.url='https://fhir.nhs.uk/StructureDefinition/Extension-UKCore-MedicationRepeatInformation' then {
+        ext.extension as vs where $this.url='numberOfRepeatPrescriptionsAllowed' 
+           -> tgt.dispenseRequest as vt then DispenseRequest(vs, vt); 
+     };
 }
 
 group ExtensionUnsignedIntValue(source src : Extension, target tgt : Extension) {
@@ -19,5 +24,9 @@ group ExtensionUnsignedIntValue(source src : Extension, target tgt : Extension) 
 
 group ExtensionDateTimeValue(source src : Extension, target tgt : Extension) {
     src.value as vs -> tgt.value = create('dateTime') as vt, vt.value = vs;
+}
+
+group DispenseRequest(source src, target tgt) {
+    src.value as vs -> tgt.numberOfRepeatsAllowed = create('unsignedInt') as vt, vt.value = vs;
 }
 

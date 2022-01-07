@@ -2,7 +2,6 @@
   "resourceType": "MedicationRequest",
   "extension": [
     {
-      "url": "https://fhir.nhs.uk/StructureDefinition/Extension-CareConnect-MedicationRepeatInformation-1",
       "extension": [
         {
           "url": "numberOfRepeatPrescriptionsIssued",
@@ -12,7 +11,14 @@
           "url": "authorisationExpiryDate",
           "valueDateTime": "2020-08-10"
         }
-      ]
+      ],
+      "url": "https://fhir.nhs.uk/StructureDefinition/Extension-UKCore-MedicationRepeatInformation"
+    },
+    {
+      "url": "https://fhir.nhs.uk/StructureDefinition/Extension-UKCore-MedicationRepeatInformation"
     }
-  ]
+  ],
+  "dispenseRequest": {
+    "numberOfRepeatsAllowed": 6
+  }
 }
