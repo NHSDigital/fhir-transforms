@@ -1,0 +1,28 @@
+name: Validate Transforms
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Download validator_cli
+        run: wget https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar
+
+      - name: Run transform
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'temurin' 
+          java-version: '17'
+      - run: java -jar validator_cli.jar resources/medicationrequest/careconnect-to-ukcore/data/input-MedicationRepeatInformation-001.json -transform http://basic.test/medication-request -version 4.0.1 -ig resources/medicationrequest/careconnect-to-ukcore/maps/fml-MedicationRepeatInformation.map -output /tmp/test.json
+
+      - name: Display transform
+        run: cat /tmp/test.json
+
+      - name: Diff output and expected
+        run: diff --color <(jq -S < /tmp/test.json) <(jq -S < resources/medicationrequest/careconnect-to-ukcore/data/expected-MedicationRepeatInformation-001.json)
