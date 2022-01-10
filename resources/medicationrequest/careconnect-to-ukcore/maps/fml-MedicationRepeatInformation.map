@@ -1,8 +1,6 @@
 map "http://basic.test/medication-request" = "basic-test-medication-request"
 uses "http://hl7.org/fhir/StructureDefinition/MedicationRequest" alias MedicationRequest as source
 uses "http://hl7.org/fhir/StructureDefinition/MedicationRequest" alias MedicationRequest as target
-uses "http://hl7.org/fhir/StructureDefinition/Extension" alias Extension as source
-uses "http://hl7.org/fhir/StructureDefinition/Extension" alias Extension as target
 
 group MedicationRequest(source src : MedicationRequest, target tgt : MedicationRequest)  {
     src.extension as ext where $this.url='https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationRepeatInformation-1'
@@ -17,11 +15,11 @@ group MedicationRequest(source src : MedicationRequest, target tgt : MedicationR
      };
 }
 
-group ExtensionUnsignedIntValue(source src : Extension, target tgt : Extension) {
+group ExtensionUnsignedIntValue(source src, target tgt) {
     src.value as vs -> tgt.value = create('unsignedInt') as vt, vt.value = vs;
 }
 
-group ExtensionDateTimeValue(source src : Extension, target tgt : Extension) {
+group ExtensionDateTimeValue(source src, target tgt) {
     src.value as vs -> tgt.value = create('dateTime') as vt, vt.value = vs;
 }
 
