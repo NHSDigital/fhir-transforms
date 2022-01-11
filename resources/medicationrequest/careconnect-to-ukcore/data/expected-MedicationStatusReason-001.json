@@ -1,0 +1,17 @@
+{
+  "resourceType": "MedicationRequest",
+  "statusReason": {
+    "coding": [
+      {
+        "code": "ALLERGY1364",
+        "display": "Adverse reaction to Prednisolone",
+        "userSelected": true
+      },
+      {
+        "code": "1030121000006109",
+        "display": "Adverse reaction to Prednisolone"
+      }
+    ],
+    "text": "Adverse reaction to Prednisolone (Fat, John said)"
+  }
+}
