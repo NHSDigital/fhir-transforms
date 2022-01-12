@@ -18,7 +18,7 @@ group CodeableConceptStatusReason(source src : CodeableConcept, target tgt : Cod
 }
 
 group Coding(source src : Coding, target tgt : Coding) <<type+>> {
-    src.system as system where $this='https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1' -> tgt.system = 'UPDATED CODESYSTEM HERE';
+    src.system as system -> tgt.system = system;
     src.version as version -> tgt.version = version;
     src.code as code -> tgt.code = code;
     src.display as display -> tgt.display = display;
