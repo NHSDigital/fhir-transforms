@@ -19,7 +19,7 @@ jobs:
         with:
           distribution: 'temurin' 
           java-version: '17'
-      - run: java -jar validator_cli.jar resources/medicationrequest/careconnect-to-ukcore/data/input-MedicationRepeatInformation-001.json -transform http://basic.test/medication-request -version 4.0.1 -ig resources/medicationrequest/careconnect-to-ukcore/maps/FML-MedicationRepeatInformation-Extension-3to4.map -output /tmp/test.json
+      - run: java -jar validator_cli.jar resources/medicationrequest/careconnect-to-ukcore/data/input-MedicationRepeatInformation-001.json -transform https://fhir.nhs.uk/StructuredMap/MedicationRepeatInformation-Extension-3to4 -version 4.0.1 -ig resources/medicationrequest/careconnect-to-ukcore/maps/FML-MedicationRepeatInformation-Extension-3to4.map -output /tmp/test.json
 
       - name: Display transform
         run: cat /tmp/test.json
