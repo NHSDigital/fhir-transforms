@@ -1,10 +1,6 @@
-map "http://basic.test/medication-request" = "basic-test-medication-requesta"
+map "https://fhir.nhs.uk/StructuredMap/MedicationStatusReason-Extension-3to4" = "R3 to R4 conversion for CareConnect MedicationStatusReason extension"
 uses "http://hl7.org/fhir/StructureDefinition/MedicationRequest" alias MedicationRequest as source
 uses "http://hl7.org/fhir/StructureDefinition/MedicationRequest" alias MedicationRequest as target
-uses "http://hl7.org/fhir/StructureDefinition/CodeableConcept" alias CodeableConcept as source
-uses "http://hl7.org/fhir/StructureDefinition/CodeableConcept" alias CodeableConcept as target
-uses "http://hl7.org/fhir/StructureDefinition/Coding" alias Coding as source
-uses "http://hl7.org/fhir/StructureDefinition/Coding" alias Coding as target
 
 group MedicationRequest(source src : MedicationRequest, target tgt : MedicationRequest)  {
     src.extension as ext where $this.url='https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationStatusReason-1'
