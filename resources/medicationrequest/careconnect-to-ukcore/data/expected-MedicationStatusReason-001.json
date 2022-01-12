@@ -3,11 +3,13 @@
   "statusReason": {
     "coding": [
       {
+        "system": "https://fhir.hl7.org.uk/Id/egton-codes",
         "code": "ALLERGY1364",
         "display": "Adverse reaction to Prednisolone",
         "userSelected": true
       },
       {
+        "system": "http://snomed.info/sct",
         "code": "1030121000006109",
         "display": "Adverse reaction to Prednisolone"
       }
