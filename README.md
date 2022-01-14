@@ -12,7 +12,7 @@ Additional information can be found at
 
 * [Using the FHIR Mapping Language](https://confluence.hl7.org/display/FHIR/Using+the+FHIR+Mapping+Language)
 * [FHIR Mapping Language - Tutorial](https://www.hl7.org/fhir/mapping-tutorial.html)
-  * [Tutorial implementation](https://www.hl7.org/fhir/mapping-tutorial.html)
+  * [Tutorial implementation](https://github.com/ahdis/fhir-mapping-tutorial.git)
 
 ## Transform tools
 
