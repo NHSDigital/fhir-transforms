@@ -1,10 +1,11 @@
-map "http://basic.test/medication-request" = "basic-test-medication-request"
+map "http://fhir.nhs.uk/StructureMap/sourcename" = "Example map"
 uses "http://hl7.org/fhir/StructureDefinition/MedicationRequest" alias MedicationRequest as source
 uses "http://hl7.org/fhir/StructureDefinition/MedicationRequest" alias MedicationRequest as target
 uses "http://hl7.org/fhir/StructureDefinition/CodeableConcept" alias CodeableConcept as source
 uses "http://hl7.org/fhir/StructureDefinition/CodeableConcept" alias CodeableConcept as target
 uses "http://hl7.org/fhir/StructureDefinition/Coding" alias Coding as source
 uses "http://hl7.org/fhir/StructureDefinition/Coding" alias Coding as target
+
 group MedicationRequest(source src : MedicationRequest, target tgt : MedicationRequest)  {
     src.extension as ext where $this.url='https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1'
         -> tgt.extension as tgtext, tgtext.url='UPDATED DEFINITION HERE' then {

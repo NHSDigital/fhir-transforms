@@ -3,13 +3,16 @@ uses "http://hl7.org/fhir/StructureDefinition/MedicationRequest" alias Medicatio
 uses "http://hl7.org/fhir/StructureDefinition/MedicationRequest" alias MedicationRequest as target
 
 group MedicationRequest(source src : MedicationRequest, target tgt : MedicationRequest)  {
-    src.extension as ext where $this.url='https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationRepeatInformation-1'
+    src.extension as ext where $this.url='https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationRepeatInformation-1' or
+        $this.url='https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationRepeatInformation-1'
         -> tgt.extension as tgtext, tgtext.url='https://fhir.nhs.uk/StructureDefinition/Extension-UKCore-MedicationRepeatInformation' then {
         ext.extension as vs where $this.url='numberOfRepeatPrescriptionsIssued' 
            -> tgtext.extension = create('Extension') as vt, vt.url = 'numberOfRepeatPrescriptionsIssued' then ExtensionUnsignedIntValue(vs, vt); 
         ext.extension as vs where $this.url='authorisationExpiryDate' -> tgtext.extension = create('Extension') as vt, vt.url = 'authorisationExpiryDate' then ExtensionDateTimeValue(vs, vt); 
      };
-    src.extension as ext where $this.url='https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationRepeatInformation-1'
+
+    src.extension as ext where $this.url='https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationRepeatInformation-1' or
+        $this.url='https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationRepeatInformation-1'
         -> tgt.extension as tgtext then {
         ext.extension as vs where $this.url='numberOfRepeatPrescriptionsAllowed' -> tgt.dispenseRequest as vt then DispenseRequest(vs, vt); 
      };

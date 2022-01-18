@@ -1,2 +1,3 @@
 validator_cli.jar
 venv*
+*__pycache__*
