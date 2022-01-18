@@ -5,11 +5,11 @@
       "extension": [
         {
           "url": "descriptionId",
-          "valueId": "1012851000006115"
+          "valueId": "1030121000006113"
         },
         {
           "url": "descriptionDisplay",
-          "valueString": "Adverse reaction to Central Nervous System Drugs"
+          "valueString": "Adverse reaction to Prednisolone"
         }
       ],
       "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-coding-sctdescid"
@@ -18,7 +18,7 @@
       "extension": [
         {
           "url": "statusChangeDate",
-          "valueDateTime": "2011-09-28T10:22:32.423+01:00"
+          "valueDateTime": "2010-08-09T14:27:58.233+01:00"
         }
       ],
       "url": "http://fhir.nhs.uk/fhir/3.0/StructureDefinition/extension-statusChangeDate"
@@ -28,16 +28,16 @@
     "coding": [
       {
         "system": "https://fhir.hl7.org.uk/Id/egton-codes",
-        "code": "ALLERGY4",
-        "display": "Adverse reaction to Central Nervous System Drugs",
+        "code": "ALLERGY1364",
+        "display": "Adverse reaction to Prednisolone",
         "userSelected": true
       },
       {
         "system": "http://snomed.info/sct",
-        "code": "1012851000006104",
-        "display": "Adverse reaction to Central Nervous System Drugs"
+        "code": "1030121000006109",
+        "display": "Adverse reaction to Prednisolone"
       }
     ],
-    "text": "Adverse reaction to Central Nervous System Drugs (allergy)"
+    "text": "Adverse reaction to Prednisolone (Fat, John said)"
   }
 }
