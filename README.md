@@ -74,7 +74,7 @@ By following these naming conventions, it will simplify the code of the tests fo
 
 The tope level of this folder will contain tests written using pytest.  A lib folder has been added for common functions.  The naming convention to follow here is
 
-test-<test name>.py
+`test-<test name>.py`
 
 and the tests should be implemented using pytest.
 
