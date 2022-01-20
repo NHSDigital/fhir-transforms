@@ -12,6 +12,8 @@ This repository will provide maps and example inputs and output to be used in th
 
 The following sections describe the structure and naming conventions used for the maps and inputs.
 
+-------------------------
+
 ### A) ./resources folder
 
 The top level of this folder will contain multiple folders named using general project names, following the convention of `<profile>-to-<profile>`.
@@ -97,6 +99,8 @@ The test in ([./tests/test-resource-transforms.py](./tests/test-resource-transfo
 
 > **TODO**: Currently this has only be eyeballed in terms of expected data.  A script to test that all data that should been carried over was carried, and indicate any that was lost would be a useful check.  At that point it might make sense to indicate different types of failure, i.e. expected and unexpected.
 
+-------------------------
+	
 ### C) ./.github/workflows folder
 
 Using github actions, it will be possible to drop in new input and output examples that can be automically checked on a push or PR using the latest version of the [validator_cli](https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar) (as mentioned in the previous section).
