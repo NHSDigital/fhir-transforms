@@ -3,7 +3,13 @@ name: Render Diagrams
 on:
   workflow_dispatch:
   push:
+    branches-ignore:
+      - 'develop'
+      - 'main'
   pull_request:
+    branches-ignore:
+      - 'develop'
+      - 'main'
 
 jobs:
   build:
@@ -39,5 +45,5 @@ jobs:
           git config --global user.email 'ci@render.diagrams'; \
           git config --global user.name 'Diagram Pipeline'; \
           git add docs/scripts/rendered-diagrams/*.svg; \
-          git commit -m '[skip ci]'; \
+          git commit -m 'Auto render'; \
           git push origin $(sed -e 's#.*remotes/origin/\(\)#\1#' <<< $GITHUB_REF)
