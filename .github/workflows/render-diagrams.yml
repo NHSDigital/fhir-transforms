@@ -1,0 +1,49 @@
+name: Render Diagrams
+
+on:
+  workflow_dispatch:
+  push:
+    branches-ignore:
+      - 'develop'
+      - 'main'
+  pull_request:
+    branches-ignore:
+      - 'develop'
+      - 'main'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Download validator_cli
+        run: wget https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar
+
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install mermaid
+        run: npm install mermaid mermaid.cli
+
+      # mermaid.cli appears to have an old version of mermaid.min.js.  Swapping with version in mermaid
+      # for more feature, although mermaid doesn't seem to have the same as mermaid.live
+      # Seems like this might break at some point...
+      - name: Update mermaid.cli
+        run: cp node_modules/mermaid/dist/mermaid.min.js node_modules/mermaid.cli/
+
+      - name: Render mermaid diagrams
+        run: |
+          for f in docs/scripts/*.mmd; \
+          do node_modules/.bin/mmdc -i $f -o docs/scripts/rendered-diagrams/$(basename $f | cut -f 1 -d '.').svg; done
+
+      - name: Update repo
+        run: |
+          git config --global user.email 'ci@render.diagrams'; \
+          git config --global user.name 'Diagram Pipeline'; \
+          git add docs/scripts/rendered-diagrams/*.svg; \
+          git commit -m 'Auto render'; \
+          git push origin $(sed -e 's#.*remotes/origin/\(\)#\1#' <<< $GITHUB_REF)
