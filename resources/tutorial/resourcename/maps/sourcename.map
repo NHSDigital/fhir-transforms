@@ -1,8 +1,6 @@
 map "http://fhir.nhs.uk/StructureMap/sourcename" = "Example map"
 uses "http://hl7.org/fhir/StructureDefinition/MedicationRequest" alias MedicationRequest as source
 uses "http://hl7.org/fhir/StructureDefinition/MedicationRequest" alias MedicationRequest as target
-uses "http://hl7.org/fhir/StructureDefinition/CodeableConcept" alias CodeableConcept as source
-uses "http://hl7.org/fhir/StructureDefinition/CodeableConcept" alias CodeableConcept as target
 uses "http://hl7.org/fhir/StructureDefinition/Coding" alias Coding as source
 uses "http://hl7.org/fhir/StructureDefinition/Coding" alias Coding as target
 
@@ -10,13 +8,14 @@ group MedicationRequest(source src : MedicationRequest, target tgt : MedicationR
     src.extension as ext where $this.url='https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1'
         -> tgt.extension as tgtext, tgtext.url='UPDATED DEFINITION HERE' then {
         ext.value : CodeableConcept as vs -> tgtext.value = create('CodeableConcept') as vt then CodeableConceptPrescriptionType(vs, vt);
-     };
-   }
-group CodeableConceptPrescriptionType(source src : CodeableConcept, target tgt : CodeableConcept) {
-    // src.coding -> tgt.coding; the short form is only woking when you have a <<type>>
+    };
+}
+
+group CodeableConceptPrescriptionType(source src, target tgt) {
     src.coding -> tgt.coding;
     src.text as text -> tgt.text = text;
 }
+
 group Coding(source src : Coding, target tgt : Coding) <<type+>> {
     src.system as system where $this='https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1' -> tgt.system = 'UPDATED CODESYSTEM HERE';
     src.version as version -> tgt.version = version;
