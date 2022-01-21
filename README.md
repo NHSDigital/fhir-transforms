@@ -129,8 +129,11 @@ Additional information, the specification and more in depth tutorials can be fou
 * [Using the FHIR Mapping Language](https://confluence.hl7.org/display/FHIR/Using+the+FHIR+Mapping+Language)
 * [FHIR Mapping Language - Tutorial](https://www.hl7.org/fhir/mapping-tutorial.html)
   * [Tutorial implementation](https://github.com/ahdis/fhir-mapping-tutorial.git)
+<<<<<<< HEAD
+=======
 
 ### Overview
+>>>>>>> develop
 
 The [./resources](./resources) folder contains an input file where a couple of identities are changed by an FML map.
 
