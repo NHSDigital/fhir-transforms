@@ -21,7 +21,7 @@ jobs:
           node-version: '14'
 
       - name: Install mermaid
-        uses: npm install mermaid mermaid.cli
+        run: npm install mermaid mermaid.cli
 
       # mermaid.cli appears to have an old version of mermaid.min.js.  Swapping with version in mermaid
       # for more feature, although mermaid doesn't seem to have the same as mermaid.live
