@@ -1,1 +1,18 @@
+<<<<<<< HEAD
 {"resourceType":"MedicationRequest","extension":[{"url":"https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationRepeatInformation-1","extension":[{"url":"numberOfRepeatPrescriptionsIssued","valueUnsignedInt":10}]}]}
+=======
+{
+  "resourceType": "MedicationRequest",
+  "extension": [
+    {
+      "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationRepeatInformation-1",
+      "extension": [
+        {
+          "url": "numberOfRepeatPrescriptionsIssued",
+          "valueUnsignedInt": 10
+        }
+      ]
+    }
+  ]
+}
+>>>>>>> develop

@@ -1,0 +1,175 @@
+graph LR;
+
+%% Node color defintions for different directory types
+classDef docFiles fill:#d2f7f7,color:#000,stroke-width:2px,stroke:#000;
+classDef workFlowFiles fill:#f7d2f6,color:#000,stroke-width:2px,stroke:#000;
+classDef testFiles fill:#f7d79e,color:#000,stroke-width:2px,stroke:#000;
+classDef projectFiles fill:#d0f7d0,color:#000,stroke-width:2px,stroke:#000;
+classDef readme stroke-width:2px,stroke:#000;
+
+%% Documentation 
+.("(Repo_root) .") --> /docs
+subgraph Documentation_folder_root
+  /docs
+end
+
+/docs --> /mappings
+/docs --> /scripts
+
+subgraph Documentations_scripts_and_data
+  /mappings
+  /scripts
+end
+
+/mappings -.-> /mapping_generic
+/mappings --> /MedicationRepeatInformation-Extension-3to4.csv
+
+subgraph Mapping_spreadsheets
+  /mapping_generic("{Type name}-{Type}-{[Version number]to[Version number]}.csv")
+  /MedicationRepeatInformation-Extension-3to4.csv
+end
+
+/scripts -.-> /doc_script_generic
+/scripts --> /doc-directory-structure.mmd
+/scripts --> /rendered-diagrams
+
+subgraph Documentations_scripts
+  /doc_script_generic("doc-{[Script name]}.{type}")
+  /doc-directory-structure.mmd
+  /rendered-diagrams
+end
+
+/rendered-diagrams -.-> /rendered_generic("dia-{[Script name]}.{valid image type}")
+/rendered-diagrams --> /dia-directory-structure.svg
+
+subgraph Rendered_diagrams
+  /rendered_generic
+  /dia-directory-structure.svg
+end
+
+%% Workflows
+. --> /.github/workflows
+
+subgraph GitHub_Workflows_folder
+  /.github/workflows
+end
+
+  /.github/workflows -.-> /pipeline.yml("{pipeline name}.yml")
+  /.github/workflows --> /validate-transforms.yml
+
+subgraph GitHub_Actions_YAML
+  /pipeline.yml("{pipeline name}.yml")
+  /validate-transforms.yml
+end
+
+%% Tests
+. --> /tests
+subgraph Tests_folder_root
+  /tests
+end
+
+/tests -.-> /test-generic("/test-{test name}.py")
+/tests --> /test-resource-transforms.py
+/tests --> /lib
+
+subgraph Test_scripts
+  /test-generic("/test-{test name}.py")
+  /test-resource-transforms.py
+end
+
+subgraph Common_test_functions
+  /lib
+end
+
+%% Resources project folders
+. --> /resources
+
+subgraph Project_folder_root
+  /resources
+end
+
+/resources -.-> /profile-to-profile("/{profile}-to-{profile}")
+/resources --> /careconnect-to-ukcore
+/resources -.-> /other-to-other("/. . .")
+
+subgraph Transform_project_folders
+  /profile-to-profile("/{profile}-to-{profile}")
+  /careconnect-to-ukcore
+  /other-to-other("/. . .")
+end
+
+/careconnect-to-ukcore -.-> /fhir_resource_generic
+/careconnect-to-ukcore --> /medicationrequest
+/careconnect-to-ukcore -.-> /fhir_resource_other
+
+subgraph FHIR_resources
+  /fhir_resource_generic("{Lowercase FHIR resource name}")
+  /medicationrequest
+  /fhir_resource_other("/. . .")
+end
+
+/medicationrequest --> /input
+/medicationrequest --> /expected
+/medicationrequest --> /maps
+/medicationrequest --> /misc
+
+subgraph Other_resource_data
+  /misc
+end
+
+subgraph FML_and_FHIR_data
+  /input
+  /expected
+  /maps
+end
+
+subgraph Map_files
+  /maps -.-> /map_generic("{Type name}-{Type}-{[Version number]to[Version number]}.map")
+  /maps --> /MedicationRepeatInformation-Extension-3to4.map
+end
+
+subgraph Expected_files
+  /expected -.-> /expected_generic("{Type name}-{Type}-{[Version number]to[Version number]}_{Padded sequential number}.{['json' | 'xml']}")
+  /expected --> /expected_specific("/MedicationRepeatInformation-Extension-3to4_001.json")
+end
+
+subgraph Input_files
+  /input -.-> /input_generic("{Type name}-{Type}-{[Version number]to[Version number]}_{Padded sequential number}.{['json' | 'xml']}")
+  /input --> /input_specific("/MedicationRepeatInformation-Extension-3to4_001.json")
+end
+
+%% README
+. --> /README.md
+
+subgraph Usage&FML_tools_tutorial
+  /README.md
+end
+
+%% Documentation 
+class Documentation_folder_root docFiles;  
+class Documentations_scripts_and_data docFiles;
+class Mapping_spreadsheets docFiles;
+class Documentations_scripts docFiles;
+class Rendered_diagrams docFiles;
+
+%% Workflows
+class GitHub_Workflows_folder workFlowFiles;
+class GitHub_Actions_YAML workFlowFiles;
+
+%% Tests
+class Tests_folder_root testFiles;
+class Test_scripts testFiles;
+class Common_test_functions testFiles;
+
+%% Resources project folders
+class Project_folder_root projectFiles;
+class Transform_project_folders projectFiles;
+class FHIR_resources projectFiles;
+class Other_resource_data projectFiles;
+class FML_and_FHIR_data projectFiles;
+class Map_files projectFiles;
+class Expected_files projectFiles;
+class Input_files projectFiles;
+
+%% README
+class Usage&FML_tools_tutorial readme;
