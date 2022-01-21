@@ -3,7 +3,13 @@ name: Render Diagrams
 on:
   workflow_dispatch:
   push:
+    branches-ignore:
+      - 'develop'
+      - 'main'
   pull_request:
+    branches-ignore:
+      - 'develop'
+      - 'main'
 
 jobs:
   build:
