@@ -1,4 +1,4 @@
-name: Validate Transforms
+name: Render Diagrams
 
 on:
   workflow_dispatch:
@@ -39,4 +39,5 @@ jobs:
           git config --global user.email 'ci@render.diagrams'; \
           git config --global user.name 'Diagram Pipeline'; \
           git add docs/scripts/rendered-diagrams/*.svg; \
+          git commit -m '[skip ci]'; \
           git push origin ${GITHUB_REF##*/}
