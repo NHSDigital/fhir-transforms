@@ -10,6 +10,10 @@ The [FHIR Mapping Language](http://www.hl7.org/fhir/mapping-language.html) (FML)
 
 This repository will provide maps and example inputs and output to be used in the transformation of UK NHS FHIR extensions using FML.
 
+### Directory structure
+
+![Overview of directory structure with naming conventions](docs/scripts/rendered-diagrams/dia-directory-structure.svg "Directory structure")
+
 The following sections describe the structure and naming conventions used for the maps and inputs.
 
 -------------------------
