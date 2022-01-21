@@ -18,7 +18,7 @@ def get_input_files():
    for project in os.listdir(BASE_PATH):
       for resource in os.listdir(BASE_PATH + '/' + project):
          base_path = BASE_PATH + '/' + project + '/' + resource + '/input/'
-         input_files.extend([base_path + filename for filename in os.listdir(base_path)])
+         input_files.extend([base_path + filename for filename in os.listdir(base_path) if not filename.startswith('.')])
    return input_files
 
 ## Common function for tests to call the validator_cli.  If running locally, 
