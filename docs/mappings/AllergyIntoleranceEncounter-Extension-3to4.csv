@@ -1,0 +1,4 @@
+﻿AllergyIntoleranceEncounter - CareConnect,,,,,N/A - UK Core,,,,
+,,,,,,,,,
+Element Id,Type,Cardinality,Extension URL,Fixed Value,Element Id,Data Type,Cardinality,Extension URL,Fixed Value
+AllergyIntolerance.extension:encounter,Extension(Reference(Encounter)),0..1,http://hl7.org/fhir/StructureDefinition/encounter-associatedEncounter,,AllergyIntolerance.encounter,Reference(UK Core Encounter),0..1,,

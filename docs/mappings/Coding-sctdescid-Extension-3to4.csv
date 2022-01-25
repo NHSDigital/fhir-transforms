@@ -1,0 +1,10 @@
+﻿Coding-sctdescid - CareConnect,,,,,Coding-sctdescid - UK Core,,,,
+https://simplifier.net/hl7fhircareconnectbaselineforstu3/extension-coding-sctdescid-duplicate-2,,,,,https://simplifier.net/hl7fhirukcorer4/extensionukcorecodingsctdescid,,,,
+Element Id,Type,Cardinality,Extension URL,Fixed Value,Element Id,Data Type,Cardinality,Extension URL,Fixed Value
+Extension.extension:descriptionId,Extension,1..1,,,Extension.extension:descriptionId,Extension,0..1,,
+Extension.extension:descriptionId.url,uri,1..1,,descriptionId,Extension.extension:descriptionId.url,System.String,1..1,,descriptionId
+Extension.extension:descriptionId.valueId:valueId,id,0..1,,,Extension.extension:descriptionId.value[x].value,string,0..1,,
+Extension.extension:descriptionDisplay,Extension,0..1,,,Extension.extension:descriptionDisplay,Extension,0..1,,
+Extension.extension:descriptionDisplay.url,uri,1..1,,descriptionDisplay,Extension.extension:descriptionDisplay.url,System.String,1..1,,descriptionDisplay
+Extension.extension:descriptionDisplay.valueString:valueString,string,0..1,,,Extension.extension:descriptionDisplay.value[x],string,1..1,,
+Extension.url,uri,1..1,,https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid,Extension.url,System.String,1..1,,https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-CodingSCTDescId

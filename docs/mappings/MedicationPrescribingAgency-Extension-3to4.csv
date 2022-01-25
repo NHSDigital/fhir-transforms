@@ -1,0 +1,6 @@
+﻿MedicationPrescribingAgency - CareConnect,,,,,MedicationPrescribingOrganization - UK Core,,,,
+https://simplifier.net/hl7fhircareconnectbaselineforstu3/extension-careconnect-medicationprescribingagency-1,,,,,https://simplifier.net/hl7fhirukcorer4/extensionukcoremedicationprescribingorganization,,,,
+Element Id,Type,Cardinality,Extension URL,Fixed Value,Element Id,Data Type,Cardinality,Extension URL,Fixed Value
+MedicationStatement.extension:prescribingAgency,Extension(CodeableConcept),0..1,https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationPrescribingAgency-1,,MedicationStatement.extension:medicationPrescribingOrganization,Extension(CodeableConcept),0..1,https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-MedicationPrescribingOrganization,
+Extension.url,uri,1..1,,https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationPrescribingAgency-1,Extension.url,System.String,1..1,,https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-MedicationPrescribingOrganization
+Extension.valueCodeableConcept:valueCodeableConcept,CodeableConcept,0..1,,,Extension.value[x],CodeableConcept,1..1,,

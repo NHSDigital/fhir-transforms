@@ -1,0 +1,4 @@
+﻿AllergyIntoleranceEvidence - CareConnect,,,,,AllergyIntoleranceEvidence - UK Core,,,,
+,,,,,,,,,
+Element Id,Type,Cardinality,Extension URL,Fixed Value,Element Id,Data Type,Cardinality,Extension URL,Fixed Value
+AllergyIntolerance.extension:evidence,Extension(Reference(DiagnosticsReport)),0..1,https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-Evidence-1,,AllergyIntolerance.extension:evidence,Extension(Reference(UK Core DiagnosticReport)),0..*,https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-Evidence,
