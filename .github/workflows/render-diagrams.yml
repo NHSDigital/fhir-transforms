@@ -37,7 +37,7 @@ jobs:
 
       # When mermaid.cli renders the svg it uses a random id.  This would cause the svg to always be updated,
       # removing the usefulness of generating the diagram from code in terms of source control history.
-      # Therefore this finds and updates the ID to be a constant.
+      # Therefore this finds and updates the ID to be a constant. 
       - name: Render mermaid diagrams
         run: |
           for f in docs/scripts/*.mmd; \
@@ -51,5 +51,7 @@ jobs:
           git config --global user.email 'ci@render.diagrams'; \
           git config --global user.name 'Diagram Pipeline'; \
           git add docs/scripts/rendered-diagrams/*.svg; \
-          git commit -m 'Auto render'; \
-          git push origin $(sed -e 's#.*remotes/origin/\(\)#\1#' <<< $GITHUB_REF)
+          if [[ `git status --porcelain` ]]; then  # Check if anything to commit
+            git commit -m 'Auto render'; \
+            git push origin $(sed -e 's#.*remotes/origin/\(\)#\1#' <<< $GITHUB_REF);
+          fi
