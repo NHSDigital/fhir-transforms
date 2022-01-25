@@ -41,11 +41,10 @@ jobs:
       - name: Render mermaid diagrams
         run: |
           for f in docs/scripts/*.mmd; \
-          IMAGEFILE=$(docs/scripts/rendered-diagrams/$(basename $f | cut -f 1 -d '.').svg) ; \
-          do node_modules/.bin/mmdc -i $f -o $IMAGEFILE; \
-          MERMAIDID=$(xmlstarlet sel -t -v '(//@id)[1]' -n $IMAGEFILE; \
+          do IMAGEFILE=docs/scripts/rendered-diagrams/$(basename $f | cut -f 1 -d '.').svg; \
+          node_modules/.bin/mmdc -i $f -o $IMAGEFILE; \
+          MERMAIDID=$(xmlstarlet sel -t -v '(//@id)[1]' -n $IMAGEFILE); \
           sed -i 's/'$MERMAIDID'/mermaid-0000000000000/g' $IMAGEFILE; done
-          
 
       - name: Update repo
         run: |
