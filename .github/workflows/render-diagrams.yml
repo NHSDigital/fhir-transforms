@@ -32,10 +32,17 @@ jobs:
       - name: Update mermaid.cli
         run: cp node_modules/mermaid/dist/mermaid.min.js node_modules/mermaid.cli/
 
+      # When mermaid.cli renders the svg it uses a random id.  This would cause the svg to always be updated,
+      # removing the usefulness of generating the diagram from code in terms of source control history.
+      # Therefore this finds and updates the ID to be a constant
       - name: Render mermaid diagrams
+        uses: Mudlet/xmlstarlet-action@master
         run: |
           for f in docs/scripts/*.mmd; \
-          do node_modules/.bin/mmdc -i $f -o docs/scripts/rendered-diagrams/$(basename $f | cut -f 1 -d '.').svg; done
+          do node_modules/.bin/mmdc -i $f -o docs/scripts/rendered-diagrams/$(basename $f | cut -f 1 -d '.').svg; \
+          MERMAIDID=$(xmlstarlet sel -t -v '(//@id)[1]' -n $f); \
+          sed -i 's/'$MERMAIDID'/mermaid-0000000000000/g' $f; done
+          
 
       - name: Update repo
         run: |
