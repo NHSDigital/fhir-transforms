@@ -26,10 +26,8 @@ jobs:
       - name: Install mermaid
         run: npm install mermaid mermaid.cli
 
-      - name: Setup xmlstartlet
-        uses: Mudlet/xmlstarlet-action@master
-        with:
-          args: --version
+      - name: Install xmlstarlet
+        run: sudo apt-get install -y xmlstarlet
 
       # mermaid.cli appears to have an old version of mermaid.min.js.  Swapping with version in mermaid
       # for more feature, although mermaid doesn't seem to have the same as mermaid.live
