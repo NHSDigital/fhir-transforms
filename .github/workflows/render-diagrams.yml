@@ -51,7 +51,8 @@ jobs:
           git config --global user.email 'ci@render.diagrams'; \
           git config --global user.name 'Diagram Pipeline'; \
           git add docs/scripts/rendered-diagrams/*.svg; \
-          if [[ `git status --porcelain` ]]; then  # Check if anything to commit
+          git config --global status.showUntrackedFiles no  # Ignore untracked files
+          if [[ `git status --porcelain` ]]; then           # Check if anything to commit
             git commit -m 'Auto render'; \
             git push origin $(sed -e 's#.*remotes/origin/\(\)#\1#' <<< $GITHUB_REF);
           fi
