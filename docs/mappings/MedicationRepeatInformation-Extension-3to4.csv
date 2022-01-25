@@ -1,0 +1,11 @@
+﻿MedicationRepeatInformation - CareConnect,,,,,MedicationRepeatInformation - UK Core,,,,
+https://simplifier.net/hl7fhircareconnectbaselineforstu3/extension-careconnect-medicationrepeatinformation-1,,,,,https://simplifier.net/hl7fhirukcorer4/extensionukcoremedicationrepeatinformation,,,,
+Element Id,Type,Cardinality,Extension URL,Fixed Value,Element Id,Data Type,Cardinality,Extension URL,Fixed Value
+MedicationRequest.extension:repeatInformation,Extension(Complex),0..1,https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationRepeatInformation-1,,MedicationRequest.extension:medicationRepeatInformation,Extension(Complex),0..1,https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-MedicationRepeatInformation,
+Extension.extension:numberOfRepeatPrescriptionsAllowed.url,uri,1..1,,numberOfRepeatPrescriptionsAllowed,N/A,N/A,N/A,N/A,N/A
+Extension.extension:numberOfRepeatPrescriptionsAllowed.valueUnsignedInt:valueUnsignedInt,unsignedInt,1..1,,,N/A,N/A,N/A,N/A,N/A
+Extension.extension:numberOfRepeatPrescriptionsIssued.url,uri,1..1,,numberOfRepeatPrescriptionsIssued,Extension.extension:numberOfPrescriptionsIssued.url,System.String,1..1,,numberOfPrescriptionsIssued
+Extension.extension:numberOfRepeatPrescriptionsIssued.valueUnsignedInt:valueUnsignedInt,unsignedInt,0..1,,,Extension.extension:numberOfPrescriptionsIssued.value[x],unsignedInt,1..1,,
+Extension.extension:authorisationExpiryDate.url,uri,1..1,,authorisationExpiryDate,Extension.extension:authorisationExpiryDate.url,System.String,1..1,,authorisationExpiryDate
+Extension.extension:authorisationExpiryDate.valueDateTime:valueDateTime,dateTime,0..1,,,Extension.extension:authorisationExpiryDate.value[x],dateTime,1..1,,
+Extension.url,uri,1..1,,https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationRepeatInformation-1,Extension.url,System.String,1..1,,https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-MedicationRepeatInformation
