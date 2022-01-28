@@ -12,7 +12,7 @@ This repository will provide maps and example inputs and output to be used in th
 
 ### Directory structure
 
-![Directory structure](docs/scripts/rendered-diagrams/dia-directory-structure.svg "Overview of directory structure with naming conventions.")
+![Directory structure](docs/scripts/rendered-diagrams/dia-directory-structure.svg?raw=true "Overview of directory structure with naming conventions.")
 
 The following sections describe the structure and naming conventions used for the maps and inputs.
 
