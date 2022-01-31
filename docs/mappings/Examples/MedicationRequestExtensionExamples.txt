@@ -1,0 +1,147 @@
+Example: repeatInformation
+
+CareConnect:
+
+<extension>
+    <url>https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationRepeatInformation-1</url>
+    <extension>
+        <url>numberOfRepeatPrescriptionsAllowed</url>
+        <valueUnsignedInt>6</valueUnsignedInt>
+    </extension>
+    <extension>
+        <url>numberOfRepeatPrescriptionsIssued</url>
+        <valueUnsignedInt>1</valueUnsignedInt>
+    </extension>
+    <extension>
+        <url>authorisationExpiryDate</url>
+        <valueDateTime>2022-01-15</valueDateTime>
+    </extension>
+</extension>
+
+{
+	"extension": {
+		"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationRepeatInformation-1",
+		"extension": [
+			{
+				"url": "numberOfRepeatPrescriptionsAllowed",
+				"valueUnsignedInt": "6"
+			},
+			{
+				"url": "numberOfRepeatPrescriptionsIssued",
+				"valueUnsignedInt": "1"
+			},
+			{
+				"url": "authorisationExpiryDate",
+				"valueDateTime": "2022-01-15"
+			}
+		]
+	}
+}
+
+UKCore:
+
+<extension>
+    <url>https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-MedicationRepeatInformation</url>
+    <extension>
+        <url>numberOfPrescriptionsIssued</url>
+        <valueUnsignedInt>1</valueUnsignedInt>
+    </extension>
+    <extension>
+        <url>authorisationExpiryDate</url>
+        <valueDateTime>2022-01-15</valueDateTime>
+    </extension>
+</extension>
+
+{
+	"extension": {
+		"url": "https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-MedicationRepeatInformation",
+		"extension": [
+			{
+				"url": "numberOfPrescriptionsIssued",
+				"valueUnsignedInt": "1"
+			},
+			{
+				"url": "authorisationExpiryDate",
+				"valueDateTime": "2022-01-15"
+			}
+		]
+	}
+}
+
+########################################
+
+Example: statusReason
+
+CareConnect:
+
+<extension>
+    <url>https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationStatusReason-1</url>
+    <extension>
+        <url>statusReason</url>
+        <valueCodeableConcept>
+            <text>Clinical Contra-indication</text>
+        </valueCodeableConcept>
+    </extension>
+    <extension>
+        <url>statusChangeDate</url>
+        <valueDateTime>2022-01-15</valueDateTime>
+    </extension>
+</extension>
+
+{
+	"extension": {
+		"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationStatusReason-1",
+		"extension": [
+			{
+				"url": "statusReason",
+				"valueCodeableConcept": {
+					"text": "Clinical Contra-indication"
+				}
+			},
+			{
+				"url": "statusChangeDate",
+				"valueDateTime": "2022-01-15"
+			}
+		]
+	}
+}
+
+UKCore:
+
+statusReason maps to profile base element MedicationRequest.statusReason in UKCore
+
+statusChangeDate doesn't currently map to anywhere in UKCore but this is under review
+
+########################################
+
+Example: prescriptionType
+
+CareConnect:
+
+<extension>
+    <url>https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-PrescriptionType-1</url>
+    <valueCodeableConcept>
+        <coding>
+            <code>acute</code>
+            <display>Acute</display>
+        </coding>
+    </valueCodeableConcept>
+</extension>
+
+{
+	"extension": {
+		"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-PrescriptionType-1",
+		"valueCodeableConcept": {
+			"coding": {
+				"code": "acute",
+				"display": "Acute"
+			}
+		}
+	}
+}
+
+UKCore:
+
+prescriptionType valueCodeableConcept maps to profile base element MedicationRequest.courseOfTherapyType in UKCore
+
+
