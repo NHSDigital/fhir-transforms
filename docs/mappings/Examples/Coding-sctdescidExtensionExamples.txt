@@ -1,0 +1,65 @@
+Example: coding-sctdescid
+
+CareConnect:
+
+<extension>
+    <url>https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid</url>
+    <extension>
+        <url>descriptionId</url>
+        <valueId>22298006</valueId>
+    </extension>
+    <extension>
+        <url>descriptionDisplay</url>
+        <valueString>Myocardial infarction (disorder)</valueString>
+    </extension>
+</extension>
+
+{
+	"extension": {
+		"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+		"extension": [
+			{
+				"url": "descriptionId",
+				"valueId": "22298006"
+			},
+			{
+				"url": "descriptionDisplay",
+				"valueString": "Myocardial infarction (disorder)"
+			}
+		]
+	}
+}
+
+UKCore:
+
+<extension>
+    <url>https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-CodingSCTDescId</url>
+    <extension>
+        <url>descriptionId</url>
+        <valueIdentifier>
+            <value>22298006</value>
+        </valueIdentifier>
+    </extension>
+    <extension>
+        <url>descriptionDisplay</url>
+        <valueString>Myocardial infarction (disorder)</valueString>
+    </extension>
+</extension>
+
+{
+	"extension": {
+		"url": "https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-CodingSCTDescId",
+		"extension": [
+			{
+				"url": "descriptionId",
+				"valueIdentifier": {
+					"value": "22298006"
+				}
+			},
+			{
+				"url": "descriptionDisplay",
+				"valueString": "Myocardial infarction (disorder)"
+			}
+		]
+	}
+}

@@ -1,0 +1,128 @@
+Example: encounter
+
+CareConnect:
+
+<extension>
+    <url>http://hl7.org/fhir/StructureDefinition/encounter-associatedEncounter</url>
+    <valueReference>
+        <reference>Encounter/7D179839-BECC-49FB-B58D-97627930D360</reference>
+    </valueReference>
+</extension>
+
+{
+	"extension": {
+		"url": "http://hl7.org/fhir/StructureDefinition/encounter-associatedEncounter",
+		"valueReference": {
+			"reference": "Encounter/7D179839-BECC-49FB-B58D-97627930D360"
+		}
+	}
+}
+
+UKCore:
+
+The URL gets lost.
+The 'reference' value goes to a new base element called encounter
+
+########################################
+
+Example: allergyEnd
+
+CareConnect:
+
+<extension>
+    <url>https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AllergyIntoleranceEnd-1</url>
+    <extension>
+        <url>endDate</url>
+        <valueDateTime>2022-01-15</valueDateTime>
+    </extension>
+    <extension>
+        <url>reasonEnded</url>
+        <valueString>Allergy resolved by prescribed medication</valueString>
+    </extension>
+</extension>
+
+{
+	"extension": {
+		"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AllergyIntoleranceEnd-1",
+		"extension": [
+			{
+				"url": "endDate",
+				"valueDateTime": "2022-01-15"
+			},
+			{
+				"url": "reasonEnded",
+				"valueString": "Allergy resolved by prescribed medication"
+			}
+		]
+	}
+}
+
+UKCore:
+
+<extension>
+    <url>https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AllergyIntoleranceEnd</url>
+    <extension>
+        <url>endDate</url>
+        <valueDateTime>2022-01-15</valueDateTime>
+    </extension>
+    <extension>
+        <url>reasonEnded</url>
+        <valueString>Allergy resolved by prescribed medication</valueString>
+    </extension>
+</extension>
+
+{
+	"extension": {
+		"url": "https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AllergyIntoleranceEnd",
+		"extension": [
+			{
+				"url": "endDate",
+				"valueDateTime": "2022-01-15"
+			},
+			{
+				"url": "reasonEnded",
+				"valueString": "Allergy resolved by prescribed medication"
+			}
+		]
+	}
+}
+
+########################################
+
+Example: evidence
+
+CareConnect:
+
+<extension>
+    <url>https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-Evidence-1</url>
+    <valueReference>
+        <reference>DiagnosticReport/3BF93498-ABCF-4326-B5F4-071EDB142D60</reference>
+    </valueReference>
+</extension>
+
+{
+	"extension": {
+		"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-Evidence-1",
+		"valueReference": {
+			"reference": "DiagnosticReport/3BF93498-ABCF-4326-B5F4-071EDB142D60"
+		}
+	}
+}
+
+UKCore:
+
+<extension>
+    <url>https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-Evidence</url>
+    <valueReference>
+        <reference>DiagnosticReport/3BF93498-ABCF-4326-B5F4-071EDB142D60</reference>
+    </valueReference>
+</extension>
+
+{
+	"extension": {
+		"url": "https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-Evidence",
+		"valueReference": {
+			"reference": "DiagnosticReport/3BF93498-ABCF-4326-B5F4-071EDB142D60"
+		}
+	}
+}
