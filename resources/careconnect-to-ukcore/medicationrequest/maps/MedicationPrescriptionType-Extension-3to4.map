@@ -16,7 +16,7 @@ group CodeableConceptStatusReason(source src : CodeableConcept, target tgt : Cod
 }
 
 group Coding(source src : Coding, target tgt : Coding) <<type+>> {
-    src.system as system -> tgt.system = system;
+    src.system as system -> tgt.system = 'http://hl7.org/fhir/ValueSet/medicationrequest-course-of-therapy';
     src.version as version -> tgt.version = version;
     src.code as code -> tgt.code = code;
     src.display as display -> tgt.display = display;
