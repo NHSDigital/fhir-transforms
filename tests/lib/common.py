@@ -1,4 +1,4 @@
-import os, shutil, subprocess, json
+import os, shutil, subprocess, json, errno
 
 ## @package common
 #  Helper and common functions for tests
