@@ -9,18 +9,6 @@ group MedicationRequest(source src : MedicationRequest, target tgt : MedicationR
        ext.extension as vs where $this.url='statusReason' -> tgt.statusReason as vt1 then {
           vs.value : CodeableConcept as vs1 -> tgt.statusReason as vt2 then CodeableConceptStatusReason(vs1, vt2);
        };
-
-       // TODO/NOTE statusChangeDate is not mapped to UKCore.  Carrying over data to perserve it, but this
-       // might not the preferred behavioud.  This statement can be removed to remove the extension.
-       // The url is also preserved here, i.e. version 3.0
-       ext.extension as vs where $this.url='statusChangeDate' -> tgt.extension = create('Extension') as vt, 
-          vt.url='http://fhir.nhs.uk/fhir/3.0/StructureDefinition/extension-statusChangeDate' then {
-          vs.value : dateTime as vs1 -> vt.extension = create('Extension') as vt1, 
-             vt1.url='statusChangeDate' then {
-                vs.value : dateTime as vs2 -> vt1.value = create('dateTime') as vt2, vt2.value = vs2;
-          };
-       };
-
     };
 }
 
