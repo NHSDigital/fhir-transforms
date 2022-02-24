@@ -1,0 +1,17 @@
+﻿MedicationChangeSummary - CareConnect,,,,,N/A - UK Core,,,,
+https://simplifier.net/hl7fhircareconnectbaselineforstu3/extension-careconnect-medicationchangesummary-1,,,,,,,,,
+Element Id,Type,Cardinality,Extension URL,Fixed Value,Element Id,Data Type,Cardinality,Extension URL,Fixed Value
+MedicationStatement.extension:changeSummary,Extension(Complex),0..1,https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationChangeSummary-1,,N/A,N/A,N/A,N/A,N/A
+Extension.extension:status,Extension,0..1,,,N/A,N/A,N/A,N/A,N/A
+Extension.extension:url,uri,1..1,,status,N/A,N/A,N/A,N/A,N/A
+Extension.extension:status.valueCode:valueCode,code,0..1,,,N/A,N/A,N/A,N/A,N/A
+Extension.extension:indicationForChange,Extension,0..1,,,N/A,N/A,N/A,N/A,N/A
+Extension.extension:indicationForChange.url,uri,1..1,,indicationForChange,N/A,N/A,N/A,N/A,N/A
+Extension.extension:indicationForChange.valueCodeableConcept:valueCodeableConcept,CodeableConcept,0..1,,,N/A,N/A,N/A,N/A,N/A
+Extension.extension:dateChanged,Extension,0..1,,,N/A,N/A,N/A,N/A,N/A
+Extension.extension:dateChanged.url,uri,1..1,,dateChanged,N/A,N/A,N/A,N/A,N/A
+Extension.extension:dateChanged.valueDateTime:valueDateTime,dateTime,0..1,,,N/A,N/A,N/A,N/A,N/A
+Extension.extension:detailsOfAmendment,Extension,0..1,,,N/A,N/A,N/A,N/A,N/A
+Extension.extension:detailsOfAmendment.url,uri,1..1,,detailsOfAmendment,N/A,N/A,N/A,N/A,N/A
+Extension.extension:detailsOfAmendment.valueString:valueString,string,0..1,,,N/A,N/A,N/A,N/A,N/A
+Extension.url,uri,1..1,,https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationChangeSummary-1,N/A,N/A,N/A,N/A,N/A

@@ -1,0 +1,6 @@
+﻿MedicationDosageLastChanged - CareConnect,,,,,N/A - UK Core,,,,
+https://simplifier.net/hl7fhircareconnectbaselineforstu3/extension-careconnect-medicationdosagelastchanged-1,,,,,,,,,
+Element Id,Type,Cardinality,Extension URL,Fixed Value,Element Id,Data Type,Cardinality,Extension URL,Fixed Value
+MedicationStatement.extension:dosageLastChanged,Extension(dateTime),0..1,https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationDosageLastChanged-1,,N/A,N/A,N/A,N/A,N/A
+Extension.url,uri,1..1,,https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationDosageLastChanged-1,N/A,N/A,N/A,N/A,N/A
+Extension.valueDateTime:valueDateTime,dateTime,0..1,,,N/A (TBC),N/A,N/A,N/A,N/A

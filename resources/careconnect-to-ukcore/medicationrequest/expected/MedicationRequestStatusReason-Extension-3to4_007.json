@@ -1,0 +1,6 @@
+{
+  "resourceType": "MedicationRequest",
+  "statusReason": {
+    "text": "End course for acute post G -> T switch for 22047"
+  }
+}

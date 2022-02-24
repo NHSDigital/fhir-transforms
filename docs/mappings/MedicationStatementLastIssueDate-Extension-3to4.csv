@@ -1,0 +1,6 @@
+﻿MedicationStatementLastIssueDate - CareConnect,,,,,MedicationStatementLastIssueDate - UK Core,,,,
+https://simplifier.net/hl7fhircareconnectbaselineforstu3/extension-careconnect-medicationstatementlastissuedate-1,,,,,https://simplifier.net/hl7fhirukcorer4/extensionukcoremedicationstatementlastissuedate,,,,
+Element Id,Type,Cardinality,Extension URL,Fixed Value,MedicationRepeatInformation - UK Core,Data Type,Cardinality,Extension URL,Fixed Value
+MedicationStatement.extension:lastIssueDate,Extension(dateTime),0..1,https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationStatementLastIssueDate-1,,MedicationStatement.extension:medicationStatementLastIssueDate,Extension(dateTime),0..1,https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-MedicationStatementLastIssueDate,
+Extension.url,uri,1..1,,https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationStatementLastIssueDate-1,Extension.url,System.String,1..1,,https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-MedicationStatementLastIssueDate
+Extension.valueDateTime:valueDateTime,dateTime,0..1,,,Extension.value[x],dateTime,1..1,,

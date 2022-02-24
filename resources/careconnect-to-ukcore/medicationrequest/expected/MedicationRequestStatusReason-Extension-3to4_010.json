@@ -1,0 +1,6 @@
+{
+  "resourceType": "MedicationRequest",
+  "statusReason": {
+    "text": "Patient no longer requires these"
+  }
+}

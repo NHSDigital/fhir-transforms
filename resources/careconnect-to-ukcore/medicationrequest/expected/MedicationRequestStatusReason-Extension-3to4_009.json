@@ -1,0 +1,6 @@
+{
+  "resourceType": "MedicationRequest",
+  "statusReason": {
+    "text": "Patient Preference - Switch back to Atorvastatin"
+  }
+}

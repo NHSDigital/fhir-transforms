@@ -1,3 +1,9 @@
+.idea
 validator_cli.jar
 venv*
 *__pycache__*
+
+#Excel temp files
+**/~$*
+
+**/.DS_Store

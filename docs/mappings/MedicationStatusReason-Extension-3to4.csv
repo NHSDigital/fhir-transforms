@@ -1,0 +1,9 @@
+﻿MedicationStatusReason - CareConnect,,,,,N/A - UK Core,,,,
+https://simplifier.net/hl7fhircareconnectbaselineforstu3/extension-careconnect-medicationstatusreason-1,,,,,,,,,
+Element Id,Type,Cardinality,Extension URL,Fixed Value,Element Id,Data Type,Cardinality,Extension URL,Fixed Value
+MedicationRequest.extension:statusReason,Extension,0..1,https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationStatusReason-1,,N/A,N/A,N/A,N/A,N/A
+Extension.extension:statusReason.url,uri,1..1,,statusReason,N/A,N/A,N/A,N/A,N/A
+Extension.extension:statusReason.valueCodeableConcept:valueCodeableConcept,CodeableConcept,0..1,,,MedicationRequest.statusReason,CodeableConcept,0..1,,
+Extension.extension:statusChangeDate.url,uri,1..1,,statusChangeDate,N/A,N/A,N/A,N/A,N/A
+Extension.extension:statusChangeDate.valueDateTime:valueDateTime,dateTime,0..1,,,N/A (but perhaps MedicationRequest.meta.lastUpdated - pending review),N/A,N/A,N/A,N/A
+Extension.url,uri,1..1,,https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationStatusReason-1,N/A,N/A,N/A,N/A,N/A

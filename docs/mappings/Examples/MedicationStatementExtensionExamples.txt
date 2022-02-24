@@ -1,0 +1,168 @@
+Example: lastIssueDate
+
+CareConnect:
+
+<extension>
+    <url>https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationStatementLastIssueDate-1</url>
+    <valueDateTime>2022-01-15</valueDateTime>
+</extension>
+
+{
+	"extension": {
+		"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationStatementLastIssueDate-1",
+		"valueDateTime": "2022-01-15"
+	}
+}
+
+UKCore:
+
+<extension>
+  <url>https://simplifier.net/hl7fhirukcorer4/extensionukcoremedicationstatementlastissuedate</url>
+  <valueDateTime>2022-01-15</valueDateTime>
+</extension>
+
+{
+	"extension": {
+		"url": "https://simplifier.net/hl7fhirukcorer4/extensionukcoremedicationstatementlastissuedate",
+		"valueDateTime": "2022-01-15"
+	}
+}
+
+########################################
+
+Example: changeSummary
+
+CareConnect:
+
+<extension>
+    <url>https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationChangeSummary-1</url>
+    <extension>
+        <url>status</url>
+        <valueCode>Added</valueCode>
+    </extension>
+    <extension>
+        <url>indicationForChange</url>
+        <valueCodeableConcept>
+            <coding>
+                <code>CODE</code>
+                <display>DISPLAY</display>
+            </coding>
+        </valueCodeableConcept>
+    </extension>
+    <extension>
+        <url>dateChanged</url>
+        <valueDateTime>2022-01-15</valueDateTime>
+    </extension>
+    <extension>
+        <url>detailsOfAmendment</url>
+        <valueString>Add new info</valueString>
+    </extension>
+</extension>
+
+{
+	"extension": {
+		"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationChangeSummary-1",
+		"extension": [
+			{
+				"url": "status",
+				"valueCode": "Added"
+			},
+			{
+				"url": "indicationForChange",
+				"valueCodeableConcept": {
+					"coding": {
+						"code": "CODE",
+						"display": "DISPLAY"
+					}
+				}
+			},
+			{
+				"url": "dateChanged",
+				"valueDateTime": "2022-01-15"
+			},
+			{
+				"url": "detailsOfAmendment",
+				"valueString": "Add new info"
+			}
+		]
+	}
+}
+
+UKCore:
+
+MedicationChangeSummary extension does not map to UKCore
+
+########################################
+
+Example: dosageLastChanged
+
+CareConnect:
+
+<extension>
+    <url>https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationDosageLastChanged-1</url>
+    <valueDateTime>2022-01-15</valueDateTime>
+</extension>
+
+{
+	"extension": {
+		"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationDosageLastChanged-1",
+		"valueDateTime": "2022-01-15"
+	}
+}
+
+UKCore:
+
+MedicationDosageLastChanged extension does not currently map to UKCore but is under review
+
+########################################
+
+Example: prescribingAgency
+
+CareConnect:
+
+<extension>
+    <url>https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationPrescribingAgency-1</url>
+    <valueCodeableConcept>
+        <coding>
+            <code>prescribed-at-gp-practice</code>
+            <display>Prescribed at GP practice</display>
+        </coding>
+    </valueCodeableConcept>
+</extension>
+
+{
+	"extension": {
+		"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationPrescribingAgency-1",
+		"valueCodeableConcept": {
+			"coding": {
+				"code": "prescribed-at-gp-practice",
+				"display": "Prescribed at GP practice"
+			}
+		}
+	}
+}
+
+UKCore:
+
+<extension>
+    <url>https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-MedicationPrescribingOrganization</url>
+    <valueCodeableConcept>
+        <coding>
+            <code>prescribed-at-gp-practice</code>
+            <display>Prescribed at GP practice</display>
+        </coding>
+    </valueCodeableConcept>
+</extension>
+
+{
+	"extension": {
+		"url": "https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-MedicationPrescribingOrganization",
+		"valueCodeableConcept": {
+			"coding": {
+				"code": "prescribed-at-gp-practice",
+				"display": "Prescribed at GP practice"
+			}
+		}
+	}
+}
+

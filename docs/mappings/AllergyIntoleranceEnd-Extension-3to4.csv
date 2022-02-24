@@ -1,0 +1,11 @@
+﻿AllergyIntoleranceEnd - CareConnect,,,,,AllergyIntoleranceEnd - UK Core,,,,
+https://simplifier.net/hl7fhircareconnectbaselineforstu3/extension-careconnect-allergyintoleranceend-1,,,,,https://simplifier.net/hl7fhirukcorer4/extensionukcoreallergyintoleranceend,,,,
+Element Id,Type,Cardinality,Extension URL,Fixed Value,Element Id,Data Type,Cardinality,Extension URL,Fixed Value
+AllergyIntolerance.extension:allergyEnd,Extension(Complex),0..1,https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AllergyIntoleranceEnd-1,,AllergyIntolerance.extension:allergyIntoleranceEnd,Extension(Complex),0..1,https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AllergyIntoleranceEnd,
+Extension.extension.endDate,Extension,0..1,,,Extension.extension.endDate,Extension,0..1,,
+Extension.extension:endDate.url,uri,1..1,,endDate,Extension.extension:endDate.url,System.String,1..1,,endDate
+Extension.extension:endDate.valueDateTime:valueDateTime,dateTime,0..1,,,Extension.extension:endDate.value[x],dateTime,1..1,,
+Extension.extension:reasonEnded,Extension,0..1,,,Extension.extension:reasonEnded,Extension,0..1,,
+Extension.extension:reasonEnded.url,uri,1..1,,reasonEnded,Extension.extension:reasonEnded.url,System.String,1..1,,reasonEnded
+Extension.extension:reasonEnded.valueString:valueString,string,0..1,,,Extension.extension:reasonEnded.value[x],string,1..1,,
+Extension.url,uri,1..1,,https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AllergyIntoleranceEnd-1,Extension.url,System.String,1..1,,https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AllergyIntoleranceEnd
