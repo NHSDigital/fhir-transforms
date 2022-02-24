@@ -2,10 +2,10 @@
   "resourceType": "Encounter",
   "extension": [
     {
-	  "url": "http://hl7.org/fhir/StructureDefinition/encounter-associatedEncounter",
-	  "valueReference": {
-			"reference": "Encounter/7D179839-BECC-49FB-B58D-97627930D360"
+      "url": "http://hl7.org/fhir/StructureDefinition/encounter-associatedEncounter",
+      "valueReference": {
+        "reference": "Encounter/7D179839-BECC-49FB-B58D-97627930D360"
       }
-	}
+    }
   ]
 }
