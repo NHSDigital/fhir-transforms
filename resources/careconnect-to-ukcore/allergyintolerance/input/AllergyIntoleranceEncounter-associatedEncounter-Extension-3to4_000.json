@@ -1,5 +1,5 @@
 {
-  "resourceType": "Encounter",
+  "resourceType": "AllergyIntolerance",
   "extension": [
     {
       "url": "http://hl7.org/fhir/StructureDefinition/encounter-associatedEncounter",

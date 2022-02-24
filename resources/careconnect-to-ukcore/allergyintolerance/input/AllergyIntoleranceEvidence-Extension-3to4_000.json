@@ -1,5 +1,5 @@
 {
-  "resourceType": "Encounter",
+  "resourceType": "AllergyIntolerance",
   "extension": [
     {
       "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-Evidence-1",
