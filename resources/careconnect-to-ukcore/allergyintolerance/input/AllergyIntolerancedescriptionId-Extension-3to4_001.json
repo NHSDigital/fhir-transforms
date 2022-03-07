@@ -1,0 +1,24 @@
+{
+  "resourceType": "AllergyIntolerance",
+  "code": {
+    "coding": [
+      {
+        "extension": [
+          {
+            "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+            "extension": [
+              {
+                "url": "descriptionId",
+                "valueId": "152307010"
+              }
+            ]
+          }
+        ],
+        "system": "http://snomed.info/sct",
+        "code": "91936005",
+        "display": "Allergy to penicillin"
+      }
+    ],
+    "text": "Penicillin allergy"
+  }
+}
