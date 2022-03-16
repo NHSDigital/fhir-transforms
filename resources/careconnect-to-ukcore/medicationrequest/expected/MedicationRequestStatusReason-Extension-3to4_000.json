@@ -14,7 +14,10 @@
             "extension": [
               {
                 "url": "descriptionId",
-                "valueId": "1030121000006113"
+                "valueIdentifier": {
+                  "system": "http://snomed.info/sct",
+                  "value": "1030121000006113"
+                }
               },
               {
                 "url": "descriptionDisplay",
