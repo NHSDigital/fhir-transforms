@@ -5,11 +5,18 @@
       {
         "extension": [
           {
-            "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+            "url": "https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-CodingSCTDescId",
             "extension": [
               {
                 "url": "descriptionId",
-                "valueId": "152307010"
+                 "valueIdentifier": {
+                   "system": "http://snomed.info/sct",
+                   "value": "152307010"
+                 }
+              },
+              {
+                "url": "descriptionDisplay",
+                "valueString": "Allergy to penicillin (finding)"
               }
             ]
           }

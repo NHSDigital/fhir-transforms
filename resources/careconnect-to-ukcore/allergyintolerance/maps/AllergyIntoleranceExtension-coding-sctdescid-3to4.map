@@ -1,0 +1,33 @@
+map "http://fhir.nhs.uk/StructureMap/AllergyIntoleranceExtension-coding-sctdescid-3to4" = "R3 to R4 conversion for STU3 Extension-coding-sctdescid in AllergyIntolerance.code"
+uses "http://hl7.org/fhir/StructureDefinition/AllergyIntolerance" alias AllergyIntolerance as source
+uses "http://hl7.org/fhir/StructureDefinition/AllergyIntolerance" alias AllergyIntolerance as target
+
+group AllergyIntolerance(source src : AllergyIntolerance, target tgt : AllergyIntolerance)  {
+      src.code : CodeableConcept as vs -> tgt.code = create('CodeableConcept') as vt then CodeableConceptAllergyIntolerance(vs, vt);
+}
+
+group CodeableConceptAllergyIntolerance(source src : CodeableConcept, target tgt : CodeableConcept) {
+    src.coding as vs -> tgt.coding = create('Coding') as vt then Coding(vs, vt);
+    src.text as text -> tgt.text = text;
+}
+
+group Coding(source src : Coding, target tgt : Coding) <<type+>> {
+    src.system as system -> tgt.system = system;
+    src.version as version -> tgt.version = version;
+    src.code as code -> tgt.code = code;
+    src.display as display -> tgt.display = display;
+    src.userSelected as userSelected -> tgt.userSelected = userSelected;
+
+    src.extension as vs where $this.url='https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid' -> 
+       tgt.extension = create('Extension') as vt, vt.url = 'https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-CodingSCTDescId' then {
+
+          vs.extension as vsx where $this.url='descriptionId' -> vt.extension = create('Extension') as vtx, vtx.url = 'descriptionId' then {
+             vsx.value: id as vsv -> vtx.value = create('Identifier') as vtv, 
+                vtv.system='http://snomed.info/sct',
+                vtv.value = vsv;
+          };
+
+          vs.extension as vsx where $this.url='descriptionDisplay' -> vt.extension = create('Extension') as vtx, vt.extension = vsx;
+       };
+}
+

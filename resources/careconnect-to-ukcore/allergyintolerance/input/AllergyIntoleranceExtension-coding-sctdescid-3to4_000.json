@@ -5,11 +5,15 @@
       {
         "extension": [
           {
-            "url": "https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-CodingSCTDescId",
+            "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
             "extension": [
               {
                 "url": "descriptionId",
                 "valueId": "152307010"
+              },
+              {
+                "url": "descriptionDisplay",
+                "valueString": "Allergy to penicillin (finding)"
               }
             ]
           }
