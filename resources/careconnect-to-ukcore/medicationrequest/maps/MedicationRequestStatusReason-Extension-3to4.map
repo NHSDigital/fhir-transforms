@@ -9,7 +9,17 @@ group MedicationRequest(source src : MedicationRequest, target tgt : MedicationR
        ext.extension as vs where $this.url='statusReason' -> tgt.statusReason as vt1 then {
           vs.value : CodeableConcept as vs1 -> tgt.statusReason as vt2 then CodeableConceptStatusReason(vs1, vt2);
        };
+
+       // Using convention detailed here https://build.fhir.org/versions.html#extensions
+       ext.extension as vs where $this.url='statusChangeDate' -> tgt.extension = create('Extension') as vt, 
+          vt.url='http://fhir.nhs.uk/fhir/3.0/StructureDefinition/extension-statusChangeDate' then {
+          vs.value : dateTime as vs1 -> vt.extension = create('Extension') as vt1, 
+             vt1.url='statusChangeDate' then {
+                vs.value : dateTime as vs2 -> vt1.value = create('dateTime') as vt2, vt2.value = vs2;
+          };
+       };
     };
+
 }
 
 group CodeableConceptStatusReason(source src : CodeableConcept, target tgt : CodeableConcept) {
@@ -24,10 +34,6 @@ group Coding(source src : Coding, target tgt : Coding) <<type+>> {
     src.display as display -> tgt.display = display;
     src.userSelected as userSelected -> tgt.userSelected = userSelected;
 
-//    src.extension as ext -> tgt.extension = create('Extension') as vt,
-//       vt.url = 'https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-CodingSCTDescId' then {
-//           ext.extension as vs -> vt.extension = create('Extension') as vt1, vt.extension = vs;
-//       };
     src.extension as vs where $this.url='https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid' or
                               $this.url='https://fhir.nhs.uk/STU3/StructureDefinition/Extension-coding-sctdescid' -> 
        tgt.extension = create('Extension') as vt, vt.url = 'https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-CodingSCTDescId' then {
