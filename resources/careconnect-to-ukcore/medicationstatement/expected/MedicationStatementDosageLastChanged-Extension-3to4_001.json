@@ -1,0 +1,14 @@
+{
+  "resourceType": "MedicationStatement",
+  "extension": [
+    {
+      "extension": [
+        {
+          "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationDosageLastChanged-1",
+          "valueDateTime": "2020-02-25"
+        }
+      ],
+      "url": "http://fhir.hl7.org/fhir/3.0/StructureDefinition/extension-Extension-CareConnect-MedicationDosageLastChanged-1"
+    }
+  ]
+}
