@@ -35,11 +35,11 @@ group Coding(source src : Coding, target tgt : Coding) <<type+>> {
     src.userSelected as userSelected -> tgt.userSelected = userSelected;
 
     src.extension as vs where $this.url='https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid' or
-                              $this.url='https://fhir.nhs.uk/STU3/StructureDefinition/Extension-coding-sctdescid' -> 
+                              $this.url='https://fhir.nhs.uk/STU3/StructureDefinition/Extension-coding-sctdescid' ->
        tgt.extension = create('Extension') as vt, vt.url = 'https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-CodingSCTDescId' then {
 
           vs.extension as vsx where $this.url='descriptionId' -> vt.extension = create('Extension') as vtx, vtx.url = 'descriptionId' then {
-             vsx.value: id as vsv -> vtx.value = create('Identifier') as vtv, 
+             vsx.value: id as vsv -> vtx.value = create('Identifier') as vtv,
                 vtv.system='http://snomed.info/sct',
                 vtv.value = vsv;
           };
