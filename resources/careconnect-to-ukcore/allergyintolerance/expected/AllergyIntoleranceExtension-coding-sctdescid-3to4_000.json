@@ -1,0 +1,31 @@
+{
+  "resourceType": "AllergyIntolerance",
+  "code": {
+    "coding": [
+      {
+        "extension": [
+          {
+            "url": "https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-CodingSCTDescId",
+            "extension": [
+              {
+                "url": "descriptionId",
+                 "valueIdentifier": {
+                   "system": "http://snomed.info/sct",
+                   "value": "152307010"
+                 }
+              },
+              {
+                "url": "descriptionDisplay",
+                "valueString": "Allergy to penicillin (finding)"
+              }
+            ]
+          }
+        ],
+        "system": "http://snomed.info/sct",
+        "code": "91936005",
+        "display": "Allergy to penicillin"
+      }
+    ],
+    "text": "Penicillin allergy"
+  }
+}

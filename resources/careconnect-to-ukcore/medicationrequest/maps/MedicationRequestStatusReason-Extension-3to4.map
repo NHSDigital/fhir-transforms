@@ -24,9 +24,21 @@ group Coding(source src : Coding, target tgt : Coding) <<type+>> {
     src.display as display -> tgt.display = display;
     src.userSelected as userSelected -> tgt.userSelected = userSelected;
 
-    src.extension as ext -> tgt.extension = create('Extension') as vt,
-       vt.url = 'https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-CodingSCTDescId' then {
-           ext.extension as vs -> vt.extension = create('Extension') as vt1, vt.extension = vs;
+//    src.extension as ext -> tgt.extension = create('Extension') as vt,
+//       vt.url = 'https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-CodingSCTDescId' then {
+//           ext.extension as vs -> vt.extension = create('Extension') as vt1, vt.extension = vs;
+//       };
+    src.extension as vs where $this.url='https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid' or
+                              $this.url='https://fhir.nhs.uk/STU3/StructureDefinition/Extension-coding-sctdescid' ->
+       tgt.extension = create('Extension') as vt, vt.url = 'https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-CodingSCTDescId' then {
+
+          vs.extension as vsx where $this.url='descriptionId' -> vt.extension = create('Extension') as vtx, vtx.url = 'descriptionId' then {
+             vsx.value: id as vsv -> vtx.value = create('Identifier') as vtv,
+                vtv.system='http://snomed.info/sct',
+                vtv.value = vsv;
+          };
+
+          vs.extension as vsx where $this.url='descriptionDisplay' -> vt.extension = create('Extension') as vtx, vt.extension = vsx;
        };
 }
 
