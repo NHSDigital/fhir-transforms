@@ -3,30 +3,33 @@
   "code": {
     "coding": [
       {
+        "system": "http://read.info/readv2",
+        "code": "TJ03000",
+        "display": "Adverse reaction to erythromycin",
+        "userSelected": true
+      },
+      {
         "extension": [
           {
-            "url": "https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-CodingSCTDescId",
             "extension": [
               {
                 "url": "descriptionId",
-                "valueId": "2579700012"
+                "valueIdentifier": {
+                  "system": "http://snomed.info/sct",
+                  "value": "2579700012"
+                }
               },
               {
                 "url": "descriptionDisplay",
                 "valueString": "Adverse reaction to erythromycin"
               }
-            ]
+            ],
+            "url": "https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-CodingSCTDescId"
           }
         ],
         "system": "http://snomed.info/sct",
         "code": "419056004",
         "display": "Erythromycin adverse reaction"
-      },
-      {
-        "system": "http://read.info/readv2",
-        "code": "TJ03000",
-        "display": "Adverse reaction to erythromycin",
-        "userSelected": true
       }
     ]
   }
