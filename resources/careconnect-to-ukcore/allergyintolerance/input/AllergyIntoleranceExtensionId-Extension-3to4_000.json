@@ -1,0 +1,33 @@
+{
+  "resourceType": "AllergyIntolerance",
+  "code": {
+    "coding": [
+      {
+        "system": "http://read.info/readv2",
+        "code": "TJ03000",
+        "display": "Adverse reaction to erythromycin",
+        "userSelected": true
+      },
+      {
+        "extension": [
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+            "extension": [
+              {
+                "url": "descriptionId",
+                "valueId": "2579700012"
+              },
+              {
+                "url": "descriptionDisplay",
+                "valueString": "Adverse reaction to erythromycin"
+              }
+            ]
+          }
+        ],
+        "system": "http://snomed.info/sct",
+        "code": "419056004",
+        "display": "Erythromycin adverse reaction"
+      }
+    ]
+  }
+}
