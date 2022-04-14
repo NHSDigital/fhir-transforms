@@ -1,0 +1,7 @@
+map "http://fhir.nhs.uk/StructureMap/MedicationStatementChangeSummary-Extension-3to4" = "R3 to R4 conversion for CareConnect MedicationStatementChangeSummary extension"
+uses "http://hl7.org/fhir/StructureDefinition/MedicationStatement" alias MedicationStatement as source
+uses "http://hl7.org/fhir/StructureDefinition/MedicationStatement" alias MedicationStatement as target
+
+group MedicationStatement(source src : MedicationStatement, target tgt : MedicationStatement)  {
+}
+

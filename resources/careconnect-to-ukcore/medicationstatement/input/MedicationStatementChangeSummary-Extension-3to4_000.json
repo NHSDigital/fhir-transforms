@@ -1,0 +1,31 @@
+{
+  "resourceType": "MedicationStatement",
+  "extension": [
+    {
+      "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationChangeSummary-1",
+      "extension": [
+        {
+          "url": "status",
+          "valueCode": "Added"
+        },
+        {
+          "url": "indicationForChange",
+          "valueCodeableConcept": {
+            "coding": {
+              "code": "CODE",
+              "display": "DISPLAY"
+            }
+          }
+        },
+        {
+          "url": "dateChanged",
+          "valueDateTime": "2022-01-15"
+        },
+        {
+          "url": "detailsOfAmendment",
+          "valueString": "Add new info"
+        }
+      ]
+    }
+  ]
+}
