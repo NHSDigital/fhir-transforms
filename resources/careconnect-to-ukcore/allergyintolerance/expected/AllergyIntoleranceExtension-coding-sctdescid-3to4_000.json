@@ -11,17 +11,20 @@
       {
         "extension": [
           {
-            "url": "https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-CodingSCTDescId",
             "extension": [
               {
                 "url": "descriptionId",
-                "valueId": "2579700012"
+                "valueIdentifier": {
+                  "system": "http://snomed.info/sct",
+                  "value": "2579700012"
+                }
               },
               {
                 "url": "descriptionDisplay",
                 "valueString": "Adverse reaction to erythromycin"
               }
-            ]
+            ],
+            "url": "https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-CodingSCTDescId"
           }
         ],
         "system": "http://snomed.info/sct",
