@@ -15,10 +15,13 @@ BASE_PATH = '../resources'
 #  Maybe look at fixtures if the reporting isn't clear enough
 def get_input_files():
    input_files = []
-   for project in os.listdir(BASE_PATH):
-      for resource in os.listdir(BASE_PATH + '/' + project):
-         base_path = BASE_PATH + '/' + project + '/' + resource + '/input/'
-         input_files.extend([base_path + filename for filename in os.listdir(base_path) if not filename.startswith('.')])
+   for project in filter(os.path.isdir, [os.path.join(BASE_PATH, f) for f in os.listdir(BASE_PATH)]):
+       for resource in filter(os.path.isdir, [os.path.join(project, f) for f in os.listdir(project)]):
+           base_path = resource + '/input/'
+           input_files.extend([base_path + filename
+                               for filename in os.listdir(base_path)
+                               if os.path.isfile(base_path + filename)
+                               if not filename.startswith('.')])
    return input_files
 
 ## Common function for tests to call the validator_cli.  If running locally, 
