@@ -54,8 +54,6 @@ def call_validator_cli(input_file):
                 './' + base_input_file_name,
                 '-transform',
                 BASE_URI + base_input_name,
-                '-version',
-                '4.0.1',
                 '-ig',
                 './' + base_input_name + '.map',
                 '-output',
