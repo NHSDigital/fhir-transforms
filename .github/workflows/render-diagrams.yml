@@ -1,11 +1,11 @@
 name: Render Diagrams
 
-on:
-  workflow_dispatch:
-  push:
-    branches-ignore:
-      - 'develop'
-      - 'main'
+#on:
+#  workflow_dispatch:
+#  push:
+#    branches-ignore:
+#      - 'develop'
+#      - 'main'
 
 jobs:
   build:
